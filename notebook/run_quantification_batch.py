@@ -52,9 +52,9 @@ def single_sample_quantification(main_dir, mask_dir, save_dir, file_name):
 
 
 if __name__ == "__main__":
-    main_dir = r'D:\thu\HTAN\images\NST'
-    mask_dir = r'D:\thu\HTAN\images\mask\NST'
-    save_dir = r'D:\thu\HTAN\images\quantification\NST'
+    main_dir = r'D:\thu\HTAN\images\ILC\level_2'
+    mask_dir = r'D:\thu\HTAN\images\mask\test\ILC\qc'
+    save_dir = r'D:\thu\HTAN\images\quantification\ILC\qc'
     os.makedirs(save_dir, exist_ok=True)
 
     npz_files = [f for f in os.listdir(mask_dir) if f.endswith('.npz')]

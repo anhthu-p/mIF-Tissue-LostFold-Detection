@@ -23,7 +23,7 @@ def normalize(s: str) -> str:
 CANONICAL: dict[str, str] = {
 
     # DAPI
-    normalize('DAPI1'): 'dna',
+    normalize('DAPI1'): 'dna(1)',
     normalize('DAPI2'): 'dna(2)',
     normalize('DAPI3'): 'dna(3)',
     normalize('DAPI4'): 'dna(4)',
@@ -33,6 +33,7 @@ CANONICAL: dict[str, str] = {
     normalize('DAPI8'): 'dna(8)',
     normalize('DAPI9'): 'dna(9)',
     normalize('DAPI10'): 'dna(10)',
+    normalize('DAPI11'): 'dna(11)',
 
     # ── Nuclear / DNA-damage ─────────────────────────────────────────────────
     normalize('53BP1'):                       '53BP1',
@@ -217,8 +218,8 @@ if __name__ == '__main__':
         ('aSMA',                       'aSMA'),
         ('Rb (pS807; pS811)',           'pRb'),
         ('pRB',                        'pRb'),
-        ('G1/S-specific cyclin-D1',    'CCND1'),
-        ('CCND1',                      'CCND1'),
+        ('G1/S-specific cyclin-D1',    'CyclinD1'),
+        ('CCND1',                      'CyclinD1'),
         ('PD-1',                       'PD1'),
         ('PD1',                        'PD1'),
         ('PD-L1 (E1L3N)',              'PDL1-E1L3N'),

@@ -11,7 +11,12 @@ from tqdm import tqdm
 import matplotlib.pyplot as plt  # ADDED: needed by get_histogram
 import sys
 sys.path.append('unify_biomarker_name')
+import unify_biomarker_name
 from unify_biomarker_name import canonicalize, validate_panel
+
+import importlib
+from importlib import reload
+reload(unify_biomarker_name)
 
 
 class FindImage:
