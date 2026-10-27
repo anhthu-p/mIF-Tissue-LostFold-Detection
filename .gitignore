@@ -39,5 +39,8 @@ conda_env_setup.md
 *_notes.txt
 *_notes.md
 
+# Local-only Claude Code project instructions
+CLAUDE.md
+
 # Raw image data (too large for git; see CLAUDE.md for canonical location)
 Images/
