@@ -66,7 +66,7 @@ by [`notebook/run_qc_batch.py`](notebook/run_qc_batch.py). For each slide,
 every later round's DNA channel (the "candidate" round) is compared against
 round 0's DNA channel (the reference round):
 
-**Step 0 — whole-image gate (`global_disagreement`).** Compute
+**Step 0: Whole-image gate (`global_disagreement`).** Compute
 `1 - NCC` (normalized cross-correlation) over all foreground pixels at
 once, where foreground is defined by an Otsu threshold on the reference
 round. If this whole-image disagreement exceeds `GLOBAL_DISAGREE_THRESHOLD`
@@ -74,7 +74,7 @@ round. If this whole-image disagreement exceeds `GLOBAL_DISAGREE_THRESHOLD`
 manual review — per-tile scoring would be meaningless if most of the image
 doesn't line up to begin with.
 
-**Step 1 — per-tile disagreement (`tile_disagreement`).** Otherwise, the
+**Step 1: Per-tile disagreement (`tile_disagreement`).** Otherwise, the
 image is split into a grid of `tile × tile` pixel blocks. For each tile:
 - *Foreground check*: skip tiles where less than `min_foreground` (5%) of
   pixels exceed the Otsu threshold — too little tissue to judge.
@@ -85,7 +85,7 @@ image is split into a grid of `tile × tile` pixel blocks. For each tile:
   than reference → potential fold/doubled tissue; negative = candidate
   round dimmer → potential tissue loss).
 
-**Step 2 — flagging (`flag_folds`).** Tiles are flagged as outliers using
+**Step 2: Flagging (`flag_folds`).** Tiles are flagged as outliers using
 robust statistics (`median + k · MAD` of that round's own valid tile
 `disagree` values, not mean/std, which are sensitive to the outliers
 themselves). A tile is flagged if `disagree` is a spatial outlier
@@ -93,7 +93,7 @@ themselves). A tile is flagged if `disagree` is a spatial outlier
 - `dmean > 0` → fold candidate (`fold_tile`)
 - `dmean < 0` → lost tissue (`lose_tile`)
 
-**Step 3 — export for downstream use.**
+**Step 3: Export for downstream use.**
 - `get_flagged_tile_bounds()` converts each flagged `(row, col)` tile into
   a pixel bounding box `(x0, y0, x1, y1)`, used later to exclude cells
   whose centroids fall inside.
