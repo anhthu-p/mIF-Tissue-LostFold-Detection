@@ -18,4 +18,22 @@ For this project, I want to use analyze the tumor microenvironment using spatial
 ## Stack
 - Python 
 - Trying to learn PyTorch
+- Dependency/venv management via `uv` (see `pyproject.toml`, `uv.lock`, `.python-version`)
 
+## Repo Rules
+
+1. Always adhere to best code practices for Python. Write terse docstrings for methods and properties in an academic, informative tone, using the same format shown in `examples/running_stats.py`.
+
+2. Always use type hints for function arguments wherever possible.
+
+3. Prefer composition to inheritance wherever possible.
+
+4. Write tests that capture fundamental behavior using pytest, so regressions get caught before they become a problem.
+
+5. Tests should always contain terse docstrings, and should be grouped into test classes by code proximity and test scope wherever possible.
+
+6. Never attempt to prove assertions with random tests or experiments without validating them with me first. No examples.
+
+7. Code should always remain tightly scoped, with single responsibility as much as possible. If scope begins to creep, suggest pausing to isolate scope into small, testable components before generating massive scripts. Keep scripts under 700-800 lines of code in general.
+
+See `examples/` for worked examples of rules 1, 2, 4, and 5.

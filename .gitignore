@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# uv
+.venv/
+
+# Env files
+.env
+.env.*
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+~$*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Notebook
+*.ipynb
+
+.mp4
+
+# Tests / caches
+.pytest_cache/
+
+# Project-specific
+debug.log
+*.log
+data/credentials.json
+
+# Personal notes / scratch notes-to-self
+Note_for_myself/
+conda_env_setup.md
+*_notes.txt
+*_notes.md
+
+# Raw image data (too large for git; see CLAUDE.md for canonical location)
+Images/
