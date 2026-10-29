@@ -154,39 +154,3 @@ round-0 (magenta) vs. candidate-round (green) merge:
 ![dna(8) flagged tiles](assets/qc_tissue_fold_lost/LSP12021-C10_dna8_flagged_tiles.png)
 
 
-## uv cheat sheet
-
-[uv](https://docs.astral.sh/uv/) manages the Python version, virtual
-environment, and dependencies together.
-
-```bash
-# Create/refresh the .venv from pyproject.toml + uv.lock
-uv sync
-
-# Add a runtime dependency (writes to pyproject.toml and uv.lock)
-uv add <package>
-
-# Add a dev-only dependency
-uv add --dev <package>
-
-# Remove a dependency
-uv remove <package>
-
-# Run a command inside the project's venv without activating it
-uv run <command>
-uv run python some_script.py
-uv run pytest examples/
-
-# Activate the venv directly (optional; uv run usually makes this unnecessary)
-source .venv/bin/activate
-
-# Upgrade all locked dependencies
-uv lock --upgrade
-
-# Pin/change the Python version this project uses
-uv python pin 3.12
-```
-
-`.python-version` pins the interpreter version; `uv.lock` pins exact
-dependency versions and should be committed. `.venv/` is git-ignored and
-disposable — delete it and re-run `uv sync` any time.
